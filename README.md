@@ -18,7 +18,7 @@ Start a new container and bind to host's port 8081
 sudo docker run -p 8081:8081 -t jordan/nexus:latest
 ```
 
-# Volume
+# Volumes
 
 ```
 /opt/sonatype-work
