@@ -14,10 +14,13 @@ This repository contains the source for the [Sonatype Nexus](http://www.sonatype
 # Usage
 Start a new container and bind to host's port 8081
 
-```sudo docker run -p 8081:8081 -t jordan/nexus:latest```
+```
+sudo docker run -p 8081:8081 -t jordan/nexus:latest
+```
 
-# Volumes
+# Volume
 
-```/opt/sonatype-work```
-
-```/opt/nexus/conf```
+```
+/opt/sonatype-work
+/opt/nexus/conf
+```
