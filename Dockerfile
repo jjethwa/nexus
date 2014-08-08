@@ -13,8 +13,6 @@ ADD http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz /tmp/nexus.tar
 RUN tar xfv /tmp/nexus.tar -C /opt && rm /tmp/nexus.tar
 RUN /usr/sbin/useradd --create-home --home-dir /home/nexus --shell /bin/bash nexus
 RUN ln -s `find /opt -maxdepth 1 -type d -iname "nexus-*"` /opt/nexus
-# Change context from /nexus to /
-RUN sed -i 's,nexus-webapp-context-path=/nexus,nexus-webapp-context-path=/,g' /opt/nexus/conf/nexus.properties
 
 RUN chown -R nexus.nexus /opt/sonatype-work `find /opt -maxdepth 1 -type d -iname "nexus-*"`
 
