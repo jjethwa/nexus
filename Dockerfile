@@ -17,8 +17,10 @@ RUN ln -s `find /opt -maxdepth 1 -type d -iname "nexus-*"` /opt/nexus
 RUN chown -R nexus.nexus /opt/sonatype-work `find /opt -maxdepth 1 -type d -iname "nexus-*"`
 
 # Supervisor
-RUN mkdir -p /var/log/supervisor
+RUN mkdir -p /var/log/supervisor && mkdir -p /opt/supervisor
 ADD nexus.conf /etc/supervisor/conf.d/nexus.conf
+ADD nexus_supervisor /opt/supervisor/nexus_supervisor
+RUN chmod u+x /opt/supervisor/nexus_supervisor && chown nexus.nexus /opt/supervisor/nexus_supervisor
 
 EXPOSE 8081
 
