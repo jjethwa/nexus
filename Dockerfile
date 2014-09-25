@@ -7,7 +7,7 @@ MAINTAINER Jordan Jethwa
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get -qq update && apt-get -qqy upgrade && apt-get -qqy install --no-install-recommends supervisor procps sudo ca-certificates openjdk-7-jre-headless && apt-get clean
+RUN apt-get -qq update && apt-get -qqy upgrade && apt-get -qqy install --no-install-recommends bash supervisor procps sudo ca-certificates openjdk-7-jre-headless && apt-get clean
 
 ADD http://www.sonatype.org/downloads/nexus-latest-bundle.tar.gz /tmp/nexus.tar
 RUN tar xfv /tmp/nexus.tar -C /opt && rm /tmp/nexus.tar
